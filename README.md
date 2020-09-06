@@ -21,7 +21,6 @@ sudo chown $USER:$USER /etc/kolla
 cp -r /usr/local/share/kolla-ansible/etc_examples/kolla/* /etc/kolla
 cp /usr/local/share/kolla-ansible/ansible/inventory/* .
 ```
-konfigurasi inventory multinode (karena menggunakan lebih dari 1 node, jika hanya 1 node gunakan all=in-one)
 
 ```
 vi /etc/hosts
@@ -48,7 +47,7 @@ kolla_install_type: "source"
 openstack_release: "ussuri"
 kolla_internal_vip_address: "10.40.180.250"
 network_interface: "ens3"
-neutron_external_interface: "ens8"
+#neutron_external_interface: "ens3"
 ```
 deploy openstack
 ```
@@ -68,3 +67,6 @@ check your admin password<br>
 
 show all container openstack environment<br>
 `docker ps`
+
+check dashboard openstack
+http://ip_controller/horizon
